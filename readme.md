@@ -70,7 +70,7 @@ class City extends Model{
 // query way
 Capsule::select('your sql query');
 // eloquent way
-Capsule::all();
+City::all();
 ~~~
 1. delete
 ~~~php
