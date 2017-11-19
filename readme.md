@@ -2,17 +2,16 @@
 1. make a file core/db.php
 1. require 2 composer package [illuminate/database, illuminate/events]
 1. If you want to use any package you should require `vendor/autoload.php` in your file
-1. paste connection code to core/db.php file and add your credentials
-1. in order to add any of your file in autoload.php you should tell your composer.json file following
+1. paste connection code to `core/db.php` file and add your credentials
+1. in order to add any of your file in `autoload.php` you should tell your `composer.json` file following
 ~~~json
 "autoload": {
   "files": ["<fileName>"],
   "classmap": ["models"]
 }
 ~~~
-1. in order to dump your file to autoload.php file, you have to use commmand `composer dump-autoload`
-1. to create table using namespace      
-copy schema code from illuminate/database package 
+1. in order to dump your file to `autoload.php` file, you have to use commmand `composer dump-autoload`
+1. to create table using schema copy schema code from `illuminate/database` package
 ~~~php
 Capsule::schema()->create('users', function ($table) {
     $table->increments('id');
@@ -39,6 +38,11 @@ Capsule::schema()->create('users', function ($table) {
   $table->integer('id')->unsigned();
 });
 ~~~
+1. to make any field unique we will use `unsigned` function. Its mandatory.
+~~~php
+Capsule::schema()->create('users', function ($table) {
+  $table->integer('id')->unique();
+});
 1. to drop table we use `drop` or `dropIfExists`
 ~~~php
 Capsule::schema()->dropIfExists(<tablename>);
