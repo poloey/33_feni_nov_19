@@ -43,6 +43,7 @@ Capsule::schema()->create('users', function ($table) {
 Capsule::schema()->create('users', function ($table) {
   $table->integer('id')->unique();
 });
+~~~
 * to drop table we use `drop` or `dropIfExists`
 ~~~php
 Capsule::schema()->dropIfExists(<tablename>);
