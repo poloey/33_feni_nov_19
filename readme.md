@@ -38,7 +38,7 @@ Capsule::schema()->create('users', function ($table) {
   $table->integer('id')->unsigned();
 });
 ~~~
-1. to make any field unique we will use `unsigned` function. Its mandatory.
+1. to make any field unique we will use `unique` function. Its mandatory.
 ~~~php
 Capsule::schema()->create('users', function ($table) {
   $table->integer('id')->unique();
