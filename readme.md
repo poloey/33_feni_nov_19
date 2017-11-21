@@ -11,7 +11,7 @@
 }
 ~~~
 * in order to dump your file to `autoload.php` file, you have to use commmand `composer dump-autoload`
-* to create table using schema copy schema code from `illuminate/database` package
+* to create table using schema copy schema code from `illuminate/database` package. id, created_at, updated_at is must have column in table when you are using this package
 ~~~php
 Capsule::schema()->create('users', function ($table) {
     $table->increments('id');
